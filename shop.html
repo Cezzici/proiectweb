@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shop</title>
+    <link rel="stylesheet" type="text/css" href="shop.css">
+    <script src="server.js"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@700;800&family=Khand:wght@700&family=Raleway&display=swap"
+        rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Alata&family=Inter:wght@700;800&family=Khand:wght@700&family=Raleway&display=swap"
+        rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Alata&family=Allura&family=Inter:wght@700;800&family=Khand:wght@700&family=Raleway&display=swap"
+        rel="stylesheet ">
+</head>
+
+<body>
+    <div class="navbar">
+        <ul>
+            <li><a href="mainpage.html">Acasă</a></li>
+        </ul>
+        <ul>
+            <li><a href="aboutus.html">Despre noi</a></li>
+        </ul>
+        <ul>
+            <li><a href="shop.html">Shop</a></li>
+        </ul>
+        <ul>
+            <li><a href="login.html">Intră în cont</a></li>
+        </ul>
+        <ul>
+            <li><a href="cart.html">Coș</a></li>
+        </ul>
+        <ul>
+            <li><a href="adminlogin.html"> Admin </a></li>
+        </ul>
+    </div>
+
+    <div class="titluShop">
+        <h1>Shop</h1>
+    </div>
+
+    <div class="product-container">
+
+        <div class="product">
+            <img src="produs1.jpeg" alt="Product 1">
+            <img src="produs1poza2.jpeg" alt="Product 1 poza 2">
+            <h2>Brățară Summer Animal</h2>
+            <p class="product-price">125 lei</p>
+            <button class="add-to-cart-button">Adaugă în coș</button>
+        </div>
+
+        <div class="product">
+            <img src="produs2.jpeg" alt="Product 2">
+            <img src="produs2poza2.jpeg" alt="Product 2 poza 2">
+            <h2>Brățară Pink Elegance</h2>
+            <p class="product-price">115 lei</p>
+            <button class="add-to-cart-button">Adaugă în coș</button>
+        </div>
+
+        <div class="product">
+            <img src="produs3.jpeg" alt="Product 3">
+            <img src="produs3poza2.jpeg" alt="Product 3 poza 2">
+            <h2>Brățară Forest Green</h2>
+            <p class="product-price">130 lei</p>
+            <button class="add-to-cart-button">Adaugă în coș</button>
+        </div>
+
+        <div class="product">
+            <img src="produs4poza2.jpeg" alt="Product 4 poza 2">
+            <img src="produs4.jpeg" alt="Product 4">
+            <h2>Brățară Subtle Glam </h2>
+            <p class="product-price">150 lei</p>
+            <button class="add-to-cart-button">Adaugă în coș</button>
+        </div>
+
+    </div>
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            const addToCartButtons = document.querySelectorAll(".add-to-cart-button");
+
+            addToCartButtons.forEach((button) => {
+                button.addEventListener("click", function () {
+                    const productContainer = this.closest(".product");
+
+                    if (productContainer) {
+                        const productName = productContainer.querySelector("h2");
+                        const productPrice = productContainer.querySelector(".product-price");
+                        const productImage = productContainer.querySelector("img");
+
+                        if (productName && productPrice && productImage) {
+                            const cartItem = {
+                                name: productName.innerText,
+                                price: productPrice.innerText,
+                                image: productImage.src
+                            };
+
+                            let cartItems = JSON.parse(localStorage.getItem("cartItems")) || [];
+                            cartItems.push(cartItem);
+                            localStorage.setItem("cartItems", JSON.stringify(cartItems));
+                        }
+                    }
+                });
+            });
+        });
+    </script>
+
+</body>
+
+</html>

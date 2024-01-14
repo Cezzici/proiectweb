@@ -1,0 +1,119 @@
+body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 0;
+    padding: 0;
+    background-image: url('shopbackground.jpg');
+    background-size: cover;
+}
+
+.navbar {
+    width: 100vw;
+    background-color: #E3C29B;
+    padding: 15px;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.navbar ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    align-items: center;
+}
+
+.navbar ul:not(:last-child) {
+    margin-right: 20px;
+}
+
+.navbar a {
+    color: rgba(0, 0, 0, 0.80);
+    font-size: 15px;
+    font-family: 'Alata', sans-serif;
+    font-weight: 400;
+    word-wrap: break-word;
+    text-decoration: none;
+    margin-left: 15px;
+}
+
+.navbar a:hover {
+    color: #8c0404;
+}
+
+.navbar ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    align-items: center;
+}
+
+.about-container {
+    display: flex;
+    justify-content: space-between;
+    padding-right: 200px;
+    padding-top: 20px;
+}
+
+.about-content {
+    flex: 1;
+    max-width: 600px;
+    text-align: left;
+}
+
+.about-content h1 {
+    color: rgba(0, 0, 0, 0.8);
+    font-size: 35px;
+    font-family: 'Alata', sans-serif;
+    font-weight: 400;
+    margin-bottom: 20px;
+}
+
+.about-content h2 {
+    color: #000000ad;
+    margin-bottom: 10px;
+    font-size: 25px;
+    font-family: 'Alata', sans-serif;
+    font-weight: 300;
+}
+
+.about-content p {
+    color: rgba(0, 0, 0, 0.816);
+    font-size: 20px;
+    font-family: 'Alata', sans-serif;
+    font-weight: 300;
+}
+
+.about-image {
+    width: 100%;
+    max-width: 400px;
+    margin-top: 20px;
+    margin-left: 45px;
+    filter: contrast(120%) brightness(90%) saturate(100%);
+}
+
+.additional-image {
+    width: 100%;
+    max-width: 400px;
+    margin-top: 20px;
+    margin-left: 45px;
+    filter: contrast(120%) brightness(90%) saturate(100%);
+}
+
+.read-more-button {
+    background-color: #9a6400;
+    color: white;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.read-more-button:hover {
+    background-color: #e29b22;
+}
